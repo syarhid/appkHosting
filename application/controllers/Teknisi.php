@@ -175,13 +175,13 @@ public function reporting()
 	$this->db->or_where('status' , 'Selesai');
 	// $this->db->or_where('status' , 'disetujui');
 	// $this->db->or_where('status' , 'ditolak');
-	$data['laporan'] = $this->db->get('tb_pengajuan')->result_array();
+	$data['tugas'] = $this->db->get('tb_pengajuan')->result_array();
 	
 
 	$this->load->view('templates/header', $data);
 	$this->load->view('templates/sidebar', $data);
 	$this->load->view('templates/topbar', $data);
-	$this->load->view('manajer/reporting', $data);
+	$this->load->view('teknisi/reporting', $data);
 	$this->load->view('templates/footer');
 }
 }
