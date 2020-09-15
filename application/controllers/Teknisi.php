@@ -166,4 +166,22 @@ public function approve(){
 			
 }
 
+public function reporting()
+{
+	$data['title'] = 'Laporan Data Perbaikan';
+
+	$data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
+	$this->db->where('status' , 'Dikerjakan');
+	$this->db->or_where('status' , 'Selesai');
+	// $this->db->or_where('status' , 'disetujui');
+	// $this->db->or_where('status' , 'ditolak');
+	$data['laporan'] = $this->db->get('tb_pengajuan')->result_array();
+	
+
+	$this->load->view('templates/header', $data);
+	$this->load->view('templates/sidebar', $data);
+	$this->load->view('templates/topbar', $data);
+	$this->load->view('manajer/reporting', $data);
+	$this->load->view('templates/footer');
+}
 }
