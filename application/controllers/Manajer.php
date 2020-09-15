@@ -134,7 +134,9 @@ public function reporting()
 	$data['title'] = 'Laporan Data Pengajuan';
 
 	$data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
-	$this->db->where('status' , 'disetujui');
+	$this->db->where('status' , 'Dikerjakan');
+	$this->db->or_where('status' , 'Selesai');
+	$this->db->or_where('status' , 'disetujui');
 	$this->db->or_where('status' , 'ditolak');
 	$data['laporan'] = $this->db->get('tb_pengajuan')->result_array();
 	
