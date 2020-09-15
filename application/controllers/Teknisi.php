@@ -141,7 +141,7 @@ public function approve(){
 
 		if($this->form_validation->run() == false){
 			redirect('teknisi/perbaikan');
-			// Test
+			// Test 123
 		} else {
 			$tgl_penyelesaian = $this->input->post('tgl_penyelesaian');
 			$diagnosa = $this->input->post('diagnosa');
