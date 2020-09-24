@@ -21,7 +21,7 @@ class Auth extends CI_Controller {
 
 		if($this->form_validation->run()== false){
 			$data['title'] = 'Log In Page';
-			$data['alluser'] = $this->db->get('user');
+			$data['alluser'] = $this->db->get('user')->row_array();
 			$this->load->view('templates/auth_header',$data);
 			$this->load->view('auth/login');
 			$this->load->view('templates/auth_footer');
