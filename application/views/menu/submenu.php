@@ -41,7 +41,7 @@
                       <td><?= $sm['is_active']; ?></td>
                       <td>
                         <a href="" class="btn btn-success edit" data-toggle="modal" data-target="#newEditModal" data-title="<?= $sm['title']; ?>" data-menu="<?= $sm['menu']; ?>" data-url="<?= $sm['url']; ?>" data-icon="<?= $sm['icon']; ?>" data-is_active="<?= $sm['is_active']; ?>">Edit</a>
-                        <a href="<?= base_url('menu/delete_submenu/') . $sm['title'] ?>" class="btn btn-danger">Delete</a>
+                        <a href="<?= base_url('menu/delete_submenu/') . $sm['id'] ?>" class="btn btn-danger">Delete</a>
                       </td>
                     </tr>
                     <?php $i++; ?>

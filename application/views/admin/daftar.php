@@ -148,7 +148,7 @@
                   </div>
 
                   <div class="form-group">
-                    <select name="role_id" id="role_id1" class="form-control" required>
+                    <select name="role_id1" id="role_id1" class="form-control" required>
                       <option value="">Select Role</option>
                       <option value="1">Admin</option>
                       <option value="2">Karyawan</option>
@@ -158,7 +158,7 @@
                   </div>
 
                   <div class="form-group">
-                    <select name="is_active" id="is_active1" class="form-control" required>
+                    <select name="is_active1" id="is_active1" class="form-control" required>
                       <option value="">Select Status</option>
                       <option value="1">Aktif</option>
                       <option value="2">Tidak Aktif</option>

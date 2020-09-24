@@ -99,7 +99,7 @@ class User extends CI_Controller
 		$data['title'] = 'Pengajuan Perbaikan';
 		$emailsession =  $this->session->userdata('email');
 		$data['user'] = $this->db->get_where('user', ['email' => $emailsession])->row_array();
-		$data['pengajuan'] = $this->db->query("SELECT * FROM tb_pengajuan WHERE email ='$emailsession' AND status ='pengajuan' OR status = 'disetujui' OR status='Dikerjakan' ")->result_array();
+		$data['pengajuan'] = $this->db->query("SELECT * FROM tb_pengajuan WHERE email='$emailsession' AND status IN('disetujui','pengajuan','Dikerjakan')")->result_array();
 		$data['selesai'] = $this->db->query("SELECT * FROM tb_pengajuan WHERE status = 'Selesai' AND email ='$emailsession'")->result_array();
 
 		$this->form_validation->set_rules('nama_perangkat', 'Nama Perangkat', 'required');
