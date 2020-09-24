@@ -21,6 +21,7 @@ class Auth extends CI_Controller {
 
 		if($this->form_validation->run()== false){
 			$data['title'] = 'Log In Page';
+			$data['alluser'] = $this->db->get('user');
 			$this->load->view('templates/auth_header',$data);
 			$this->load->view('auth/login');
 			$this->load->view('templates/auth_footer');
@@ -34,7 +35,7 @@ class Auth extends CI_Controller {
 	private function _login(){
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
-
+		
 		$user = $this->db->get_where('user',['email' => $email])->row_array();
 //usernya ada
 		if($user){

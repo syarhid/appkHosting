@@ -4,7 +4,9 @@
     <div class="row justify-content-center">
 
       <div class="col-lg-7">
-
+        <?php foreach($alluser as $row) : ?>
+          <p><?=$row['email'] ?></p>
+        <? endforeach; ?>
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
