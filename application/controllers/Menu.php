@@ -64,15 +64,15 @@ class Menu extends CI_Controller
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Menu has been Deleted</div>');
 		redirect('menu');
 	}
-	function delete_submenu($title)
+	function delete_submenu($id)
 	{
 		$data['title'] = 'Menu Management';
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 		$data['menu'] = $this->db->get('user_menu')->result_array();
 
-		$this->db->delete('user_sub_menu', ['title' => $title]);
+		$this->db->delete('user_sub_menu', ['id' => $id]);
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Sub Menu has been Deleted</div>');
-		redirect('menu');
+		redirect('menu/submenu');
 	}
 
 	public function submenu()

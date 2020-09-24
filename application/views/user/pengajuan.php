@@ -223,7 +223,7 @@
 
         <script>
           $(document).ready(function() {
-            if (document.querySelectorAll('#table1 tbody tr').length === 1) {
+            if (document.querySelectorAll('#table1 tbody tr').length >= 1) {
               $("#tombol").addClass('disabled');
             } else {
               console.log(document.querySelectorAll("#table1 tbody tr").length);
