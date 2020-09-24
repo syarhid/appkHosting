@@ -27,6 +27,7 @@ class Admin extends CI_Controller
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
 		$data['role'] = $this->db->get('user_role')->result_array();
+		$this->form_validation->set_rules('role', 'Role Id', 'required|trim');
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar', $data);
