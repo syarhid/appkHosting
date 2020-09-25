@@ -132,7 +132,7 @@ class Auth extends CI_Controller {
 
 			$this->_sendEmail($token, 'verify');
 
-			$this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Congratulation Your Account Has Been Created! Please Activated Your Account
+			$this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Congratulation Your Account Has Been Created! Please Activated Your Account On Spam Google Mail
 				</div>');
 			redirect('auth');
 
